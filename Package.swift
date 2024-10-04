@@ -15,6 +15,8 @@ let package = Package(
         .package(url: "https://github.com/vapor/fluent-postgres-driver.git", from: "2.8.0"),
         // 🔵 Non-blocking, event-driven networking for Swift. Used for custom executors
         .package(url: "https://github.com/apple/swift-nio.git", from: "2.65.0"),
+		// WebAuthn - Passkey
+		.package(url: "https://github.com/swift-server/webauthn-swift", from: "0.0.3")
     ],
     targets: [
         .executableTarget(
@@ -25,6 +27,7 @@ let package = Package(
                 .product(name: "Vapor", package: "vapor"),
                 .product(name: "NIOCore", package: "swift-nio"),
                 .product(name: "NIOPosix", package: "swift-nio"),
+				.product(name: "WebAuthn", package: "webauthn-swift")
             ],
             swiftSettings: swiftSettings
         ),
